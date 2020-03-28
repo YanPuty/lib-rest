@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "externalConsole": true,
+  "configurations": [        
+      {
+          "type": "node",
+          "request": "attach",
+          "name": "Attach by Process ID",
+          "processId": "${command:PickProcess}",
+          "protocol": "inspector",
+      },
+      {
+          "name": "Debug doc generate",
+          "type": "node",
+          "request": "launch",
+          "args": ["${relativeFile}", "doc:generate"],
+          "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+          "sourceMaps": true,
+          "cwd": "${workspaceRoot}",
+          "protocol": "inspector",
+      }
+  ]
+}

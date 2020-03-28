@@ -1,0 +1,40 @@
+{
+  "name": "lib-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "^8.0.29",
+    "nodemon": "^2.0.2",
+    "ts-node": "3.3.0",
+    "tsc-watch": "^4.2.3",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "npm run build-debug && npm run watch-debug",
+    "build-debug": "rm -rf dist",
+    "watch-debug": "tsc-watch --onSuccess \"npm run inspect\"",
+    "inspect": "npm run assetcopy && node --inspect=9449 dist/index.js",
+    "assetcopy": "npm run htmlcopy && npm run pngcopy",
+    "pngcopy": "copyfiles -u 1 \"src/**/*.png\" dist",
+    "htmlcopy": "copyfiles -u 1 \"src/**/*.html\" dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "copyfiles": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs-extra": "^8.1.0",
+    "lodash": "^4.17.15",
+    "logger": "0.0.1",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "reflect-metadata": "^0.1.13",
+    "yamljs": "^0.3.0"
+  }
+}
